@@ -1,0 +1,17 @@
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 121.196.166.187:8848
+      config:
+        server-addr: 121.196.166.187:8848
+        file-extension: yaml
+    sentinel:
+      transport:
+        port: 8721
+        dashboard: 121.196.166.187:8080
+        clientIp: 121.4.48.148
+      eager: true
+  profiles:
+    active: dev

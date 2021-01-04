@@ -1,0 +1,15 @@
+server:
+  port: 9001
+
+spring:
+  datasource:
+    url: jdbc:mysql://121.196.166.187:3306/order?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+    username: root
+    password: 1008696333qaz
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  application:
+    name: order
