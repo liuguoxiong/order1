@@ -1,5 +1,6 @@
 package com.example.demo.web;
 
+import com.example.demo.web.service.OrderService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 /**
  * @author lgx
@@ -19,7 +19,7 @@ import java.util.List;
 public class OrderController {
 
     @Resource
-    OrderDao orderDao;
+    OrderService orderService;
 
     @Value("${config.content}")
     private String name;
@@ -29,16 +29,9 @@ public class OrderController {
         return "order-service-9001:name======="+name;
     }
 
-    @GetMapping(value = "/list")
-    public List<Order> getAccounts() {
-        return orderDao.findAll();
-    }
 
     @GetMapping(value = "/setOrder")
-    public String setOrder() {
-        Order order = new Order();
-        order.setName( "订单--order1" );
-        orderDao.save( order );
-        return "success";
+    public String setOrder(int type) {
+        return orderService.setOrder(type);
     }
 }
