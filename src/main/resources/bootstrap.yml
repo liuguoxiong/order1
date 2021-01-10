@@ -3,6 +3,7 @@ spring:
   cloud:
     nacos:
       discovery:
+        ip: 121.4.48.148
         server-addr: 121.196.166.187:8848
       config:
         server-addr: 121.196.166.187:8848
