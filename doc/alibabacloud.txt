@@ -1,0 +1,56 @@
+腾讯云服务器：https://console.cloud.tencent.com/cvm/instance/index?rid=4
+id:121.4.48.148
+
+rocketmq:
+/usr/rocketmq/distribution/target/rocketmq-4.8.0/rocketmq-4.8.0 目录下
+启动：
+nameserver:nohup sh bin/mqnamesrv &
+beoker:nohup sh bin/mqbroker -n localhost:9876 &
+可视化界面
+/usr/rocketmq-console/target目录下:
+启动:nohup java -jar rocketmq-console-ng-2.0.0.jar --server.port=12581 --rocketmq.config.namesrvAddr=121.4.48.148:9876 &
+地址:http://121.4.48.148:12581/#/cluster
+
+
+
+阿里云服务器:https://homenew.console.aliyun.com/home/scene/ProductAndService
+id:121.196.166.187
+
+redis
+mysql
+
+nacos:
+/usr/nacos/bin 目录下
+启动:sh startup.sh -m standalone
+地址:http://121.196.166.187:8848/nacos/index.html
+
+sentinel:
+/usr/sentinel 目录下
+启动:nohup java -jar sentinel-dashboard-1.6.1.jar &
+地址:http://121.196.166.187:8080/
+
+seata
+sh ./seata-server.sh -p 9200
+
+
+地址:
+http://121.4.48.148:8763/getOrderServiceName
+http://121.4.48.148:9001/order/getName
+
+http://121.4.48.148:8888/consumer/getOrderServiceName
+http://121.4.48.148:8888/order/order/getName
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
